@@ -54,9 +54,12 @@ while True:
         
     elif opcao == '3':
         print("Extrato\n")
-        for trasacao in extrato:
-            print(f'{trasacao["tipo"]} : R$ {formatar_float_para_real(trasacao["valor"])}')
-            
-        print(f"\nSaldo: R$ {formatar_float_para_real(saldo)}")
+        if extrato:
+            for trasacao in extrato:
+                print(f'{trasacao["tipo"]} : R$ {formatar_float_para_real(trasacao["valor"])}')
+                
+            print(f"\nSaldo: R$ {formatar_float_para_real(saldo)}")
+        else:
+            print("Não foram realizadas movimentações.")
     elif opcao == 'x':
         break
