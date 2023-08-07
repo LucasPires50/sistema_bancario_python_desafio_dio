@@ -53,7 +53,9 @@ while True:
             print("Valor Inválido!")
         
     elif opcao == '3':
-        print("Extrato\n")
+        titulo = " Extrato "
+        print(len(titulo))
+        print(titulo.center(20, "#"))
         if extrato:
             for trasacao in extrato:
                 print(f'{trasacao["tipo"]} : R$ {formatar_float_para_real(trasacao["valor"])}')
@@ -61,5 +63,6 @@ while True:
             print(f"\nSaldo: R$ {formatar_float_para_real(saldo)}")
         else:
             print("Não foram realizadas movimentações.")
+        print("".center(10+len(titulo), "#"))
     elif opcao == 'x':
         break
