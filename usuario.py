@@ -33,3 +33,12 @@ def verifica_cpf_utilizado(banco_de_usuario, cpf):
         print(usuario_cpf)
         if cpf == usuario_cpf:
             print("O cpf já foi utilizado.")
+            
+def realizar_login(banco_de_usuario):
+    cpf = input("Informe seu cpf: ")
+    for usuario in banco_de_usuario:
+        usuario_cpf = usuario.get("cpf", None)
+        if cpf == usuario_cpf:
+            return cpf
+    
+    

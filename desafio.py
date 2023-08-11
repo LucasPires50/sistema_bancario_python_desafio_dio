@@ -1,12 +1,24 @@
 from operacoes import formatar_float_para_real
-from usuario import criar_usuario
+from usuario import criar_usuario, realizar_login
 
-login = """
+banco = "Banco Python"
+
+login = f"""
+{banco}
+
     [1] Fazer login
     [2] Criar conta
 
 Escolha um opção:
 
+"""
+conta = f"""
+{banco}
+
+    [1] Listar contas
+    [2] Criar conta
+
+Escolha um opção:
 """
 
 operacoes = """
@@ -33,7 +45,7 @@ while True:
     if not logado:
         opcao = input(login)
         if opcao == '1':
-            print("fazer login")
+            logado = realizar_login(banco_de_usuario)
         elif opcao == '2':
             logado = criar_usuario(banco_de_usuario)
     else:
