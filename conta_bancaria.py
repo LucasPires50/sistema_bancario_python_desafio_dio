@@ -1,5 +1,5 @@
 
-def criar_conta(logado, banco_de_contas):
+def criar_conta(logado, banco_de_contas, extrato, saldo, valor_total_sacado):
     conta = 0
     if banco_de_contas:
         ultima_conta = banco_de_contas[::-1][0].get("conta", None)
@@ -15,8 +15,11 @@ def criar_conta(logado, banco_de_contas):
             "agencia": "0001"
         }
     )
-    print("conta criada")
-    return conta
+    
+    extrato.update({conta : []})
+    saldo.update({conta : 0})
+    valor_total_sacado.update({conta : 0})
+    return conta, extrato, saldo, valor_total_sacado
 
 def listar_contas(banco_de_contas):
     titulo = " Contas "
